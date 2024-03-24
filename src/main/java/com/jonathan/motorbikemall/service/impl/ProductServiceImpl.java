@@ -1,5 +1,6 @@
 package com.jonathan.motorbikemall.service.impl;
 
+import com.jonathan.motorbikemall.constant.ProductCategory;
 import com.jonathan.motorbikemall.dao.ProductDao;
 import com.jonathan.motorbikemall.dto.ProductRequest;
 import com.jonathan.motorbikemall.model.Product;
@@ -16,8 +17,8 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> getProducts() {
-        return productDao.getProducts();
+    public List<Product> getProducts(ProductCategory category, String search) {
+        return productDao.getProducts(category, search);
     }
 
     @Override
