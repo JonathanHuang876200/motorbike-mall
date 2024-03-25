@@ -7,7 +7,7 @@ import com.jonathan.motorbikemall.model.Product;
 import java.util.List;
 
 public interface ProductService {
-    List<Product> getProducts(ProductQueryParams);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 
