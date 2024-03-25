@@ -2,6 +2,7 @@ package com.jonathan.motorbikemall.controller;
 
 
 import com.jonathan.motorbikemall.constant.ProductCategory;
+import com.jonathan.motorbikemall.dto.ProductQueryParams;
 import com.jonathan.motorbikemall.dto.ProductRequest;
 import com.jonathan.motorbikemall.model.Product;
 import com.jonathan.motorbikemall.service.ProductService;
@@ -23,7 +24,11 @@ public class ProductController {
             @RequestParam(required = false) ProductCategory category,
             @RequestParam(required = false) String search
     ) {
-        List<Product> productList = productService.getProducts(category,search);
+        ProductQueryParams productQueryParams = new ProductQueryParams();
+        productQueryParams.setCategory(category);
+        productQueryParams.setSearch(search);
+
+        List<Product> productList = productService.getProducts(productQueryParams);
         return ResponseEntity.status(HttpStatus.OK).body(productList);
     }
 

@@ -1,13 +1,13 @@
 package com.jonathan.motorbikemall.dao;
 
-import com.jonathan.motorbikemall.constant.ProductCategory;
+import com.jonathan.motorbikemall.dto.ProductQueryParams;
 import com.jonathan.motorbikemall.dto.ProductRequest;
 import com.jonathan.motorbikemall.model.Product;
 
 import java.util.List;
 
 public interface ProductDao {
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 
